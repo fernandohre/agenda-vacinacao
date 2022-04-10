@@ -1,0 +1,11 @@
+.DS_Store
+/src/*.vs
+/src/Vacinacao.Api/bin/
+/src/Vacinacao.Api/obj/
+/src/Vacinacao.Application/bin/
+/src/Vacinacao.Application/obj/
+/src/Vacinacao.Core/bin/
+/src/Vacinacao.Core/obj/
+/src/Vacinacao.Infraestrutura/bin/
+/src/Vacinacao.Infraestrutura/obj/
+
