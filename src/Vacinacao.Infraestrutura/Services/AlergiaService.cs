@@ -1,9 +1,4 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Vacinacao.Core.Domain;
 using Vacinacao.Core.Domain.Dto;
 using Vacinacao.Core.Interfaces.Repositories;
@@ -42,7 +37,10 @@ namespace Vacinacao.Infraestrutura.Services
 
         public void Update(AlergiaDto updated, int key)
         {
-            throw new NotImplementedException();
+            var entity = _mapper.Map<Alergia>(updated);
+            entity.Id = key;
+
+            _repository.Update(entity, key);
         }
     }
 }

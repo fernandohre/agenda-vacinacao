@@ -8,7 +8,8 @@ namespace Vacinacao.Core.Domain.Dto
 {
     public class AgendaDto
     {
-        public DateTime data { get; set; }
+        public int? Id { get; set; }
+        public DateTime Data { get; set; }
         public TimeSpan Hora { get; set; }
         public string Situacao { get; set; }
         public DateTime DataSituacao { get; set; }
