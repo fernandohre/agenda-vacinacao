@@ -13,6 +13,7 @@ namespace Vacinacao.Api.Controllers
         {
             _service = service;
         }
+        [HttpPost("cadastrar")]
         public IActionResult Insert(AlergiaDto alergia) 
         { 
             _service.Insert(alergia);
@@ -22,7 +23,7 @@ namespace Vacinacao.Api.Controllers
                 mensagem = "Cadastrado com sucesso!"
             });
         }
-
+        [HttpPost("atualizar")]
         public IActionResult Update(AlergiaDto alergia) 
         {
             _service.Update(alergia, alergia.Id.GetValueOrDefault());
@@ -32,7 +33,7 @@ namespace Vacinacao.Api.Controllers
                 mensagem = "Atualizado com sucesso!"
             });
         }
-
+        [HttpPost("excluir")]
         public IActionResult Delete(int key) 
         { 
             _service.Delete(key);
@@ -42,7 +43,7 @@ namespace Vacinacao.Api.Controllers
                 mensagem = "Excluído com sucesso!"
             });
         }
-
+        [HttpGet]
         public JsonResult GetAll() 
         { 
             IEnumerable<AlergiaDto> itens = _service.GetAll();

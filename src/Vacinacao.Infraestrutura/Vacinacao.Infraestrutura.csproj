@@ -25,4 +25,8 @@
     <ProjectReference Include="..\Vacinacao.Core\Vacinacao.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DtoToEntity\" />
+  </ItemGroup>
+
 </Project>

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Vacinacao.Api.Extensions.IoC;
+using Vacinacao.Core.AutoMapper;
 using Vacinacao.Core.Data;
 using Vacinacao.Infraestrutura.Data;
 
@@ -28,6 +29,7 @@ services.AddDbContext<IAgendaVacinacaoContext, AgendaVacinacaoContext>(opts =>
 //Adicionando injeção de dependência dos nossos repositories e dos services
 services.AddRepositories();
 services.AddServices();
+services.AddAutoMapper(typeof(DtoEntity));
 
 var app = builder.Build();
 

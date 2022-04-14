@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,11 @@ namespace Vacinacao.Infraestrutura.Services
     public class AlergiaService : IService<AlergiaDto>
     {
         private IRepository<Alergia> _repository;
-        public AlergiaService(IRepository<Alergia> repository) 
+        private IMapper _mapper;
+        public AlergiaService(IRepository<Alergia> repository, IMapper mapper) 
         {
             _repository = repository;
+            _mapper = mapper;
         }
         public void Delete(int key)
         {
@@ -24,12 +27,17 @@ namespace Vacinacao.Infraestrutura.Services
 
         public IEnumerable<AlergiaDto> GetAll()
         {
-            throw new NotImplementedException();
+            var items = _repository.GetAll();
+
+            var result = _mapper.Map<IEnumerable<AlergiaDto>>(items);
+
+            return result;
         }
 
         public void Insert(AlergiaDto e)
         {
-            throw new NotImplementedException();
+            var entity = _mapper.Map<Alergia>(e);
+            _repository.Insert(entity);
         }
 
         public void Update(AlergiaDto updated, int key)
