@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vacinacao.Core.Domain
+namespace Vacinacao.Core.Domain.Dto
 {
-    public class Alergia : IEntity
+    public class AlergiaDto
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Nome { get; set; }
-        public List<Usuario> Usuarios { get; set; }
     }
 }

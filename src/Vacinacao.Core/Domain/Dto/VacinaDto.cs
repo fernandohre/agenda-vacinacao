@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vacinacao.Core.Domain
+namespace Vacinacao.Core.Domain.Dto
 {
-    public class Vacina : IEntity
+    public class VacinaDto
     {
         public int Id { get; set; }
         public string Titulo { get; set; }
@@ -14,6 +14,6 @@ namespace Vacinacao.Core.Domain
         public int doses { get; set; }
         public int Peridiocidade { get; set; }
         public int intervalo { get; set; }
-        public List<Agenda> Agendas { get; set; }
+        public int AgendaId { get; set; }
     }
 }

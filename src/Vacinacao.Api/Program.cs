@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Vacinacao.Api.Extensions.IoC;
+using Vacinacao.Core.Data;
 using Vacinacao.Infraestrutura.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,13 +13,23 @@ services.AddControllers();
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
 
-var app = builder.Build();
 
 services.AddDbContext<AgendaVacinacaoContext>(opts =>
 {
     var connectionString = configuration.GetConnectionString(nameof(AgendaVacinacaoContext));
     opts.UseSqlServer(connectionString);
 });
+
+services.AddDbContext<IAgendaVacinacaoContext, AgendaVacinacaoContext>(opts =>
+{
+    var connectionString = configuration.GetConnectionString(nameof(AgendaVacinacaoContext));
+    opts.UseSqlServer(connectionString);
+});
+//Adicionando injeção de dependência dos nossos repositories e dos services
+services.AddRepositories();
+services.AddServices();
+
+var app = builder.Build();
 
 using var serviceScope = app.Services.CreateScope();
 using var context = serviceScope.ServiceProvider.GetRequiredService<AgendaVacinacaoContext>();

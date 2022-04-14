@@ -14,5 +14,7 @@ namespace Vacinacao.Core.Data
         DbSet<Vacina> Vacinas { get; set; }
         DbSet<Usuario> Usuarios { get; set; }
         DbSet<Alergia> Alergias { get; set; }
+
+        void SaveChanges();
     }
 }

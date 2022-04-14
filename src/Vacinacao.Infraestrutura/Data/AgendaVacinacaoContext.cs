@@ -34,5 +34,10 @@ namespace Vacinacao.Infraestrutura.Data
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(IAgendaVacinacaoContext).Assembly);
             base.OnModelCreating(modelBuilder);
         }
+
+        public void SaveChanges()
+        {
+            base.SaveChanges();
+        }
     }
 }

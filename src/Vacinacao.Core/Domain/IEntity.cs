@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Vacinacao.Core.Domain
 {
-    public class Alergia : IEntity
+    public interface IEntity
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public List<Usuario> Usuarios { get; set; }
     }
 }

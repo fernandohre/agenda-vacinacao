@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vacinacao.Core.Domain
+namespace Vacinacao.Core.Domain.Dto
 {
-    public class Usuario : IEntity
+    public class UsuarioDto
     {
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -17,7 +17,5 @@ namespace Vacinacao.Core.Domain
         public string Setor { get; set; }
         public string Cidade { get; set; }
         public string Uf { get; set; }
-
-        public List<Alergia> Alergias { get; set; }
     }
 }

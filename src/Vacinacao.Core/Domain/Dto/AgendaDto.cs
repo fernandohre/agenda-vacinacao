@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vacinacao.Core.Domain
+namespace Vacinacao.Core.Domain.Dto
 {
-    public class Agenda : IEntity
+    public class AgendaDto
     {
-        public int Id { get; set; }
         public DateTime data { get; set; }
         public TimeSpan Hora { get; set; }
         public string Situacao { get; set; }
         public DateTime DataSituacao { get; set; }
         public string Observacoes { get; set; }
-        public Vacina Vacina { get; set; }
+        public int VacinaId { get; set; }
     }
 }
